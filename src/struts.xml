@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+ 
+	<package name="default"  extends="struts-default">
+		<action name="Login">
+			<result>pages/login.jsp</result>
+		</action>
+		<action name="Welcome" class="WelcomeUserAction">
+			<result name="Broker">/BrokerHome.jsp</result>
+			<result name="Client">/ClientHome.jsp</result>
+			<result name="Admin">pages/adminHomePage.jsp</result>
+			<result name="Error">pages/errorLogin.jsp</result>
+			<result name="RegisterPage">pages/register.jsp</result>
+		</action>
+		
+		<action name="admin" class="AdminAction">
+			<result name="addUser">pages/addUser.jsp</result>
+			<result name="deleteUser">pages/deleteUser.jsp</result>
+			<result name="modifyUser">pages/modifyUser.jsp</result>
+			<result name="addCompany">pages/addCompany.jsp</result>
+			<result name="deleteCompany">pages/deleteCompany.jsp</result>
+			<result name="modifyCompany">pages/modifyComp1.jsp</result>
+			
+		</action>
+		
+		<action name="adduser" class="AddUserAction">
+			<result name="Success">pages/adminHomePage.jsp</result>
+		</action>
+		
+		<action name="register" class="RegisterAction">
+		<result name="Broker">pages/brokerHomePage.jsp</result>
+			<result name="Client">pages/ClientHome.jsp</result>
+		</action>
+		
+		<action name="addCompany" class="AddCompanyAction">
+			<result name="Admin">pages/adminHomePage.jsp</result>
+		</action>
+		
+		<action name="modifyComp1" class="AutoFillAction">
+			<result name="modify">pages/modifyCompany.jsp</result>
+		</action>
+		
+		<action name="modifyCompany" class="ModifyCompanyAction">
+			<result name="success">pages/adminHomePage.jsp</result>
+		</action>
+		<action name="deleteUser" class="DeleteUserPopulateAction">
+			<result name="success">pages/refreshedDeleteUser.jsp</result>
+		</action>
+		<action name="deleteCompany" class="DeleteCompanyPopulateAction">
+			<result name="success">pages/refreshedDeleteCompany.jsp</result>
+		</action>
+		<action name="goBack" class="DeleteBack">
+			<result name="Success">pages/adminHomePage.jsp</result>
+		</action>
+		<action name="ModifyUser" class="ModifyUserAction">
+			<result name="Success">pages/Client_EditProfile.jsp</result>
+		</action>
+		<action name="updateUserDetails" class="ModifyUsersFinalAction">
+			<result name="Success">pages/Client_EditProfile.jsp</result>
+		</action>
+		<action name="viewStatistics" class="ShowStatistics">
+			<result name ="Success">pages/statistics.jsp </result>
+		</action>
+		
+		
+<!--  comment          -->
+<action name="clientlog" class="net.rk.struts2.action.ClientLog">
+    		<result name="success">/ClientHome.jsp</result>
+    		<result name="br">/BrokerHome.jsp</result>
+    		<result name="error">/error.jsp</result>
+    	</action>
+    	
+    	
+    	<!-- <action name="Login" class="net.rk.struts2.action.LoginAction">
+			<result name="success">stockfrontpages/login.jsp</result>
+		</action> -->
+        <!--   <action name="Welcome" class="net.rk.struts2.action.WelcomeUserAction">
+			<result name="Broker">/BrokerHome.jsp</result>
+			<result name="Client">/ClientHome.jsp</result>
+			<result name="Admin">/adminHomePage.jsp</result>			
+			<result name="Error">/errorLogin.jsp</result>
+			<result name="success">/success.jsp</result>
+			<result name="success">/ClientHome.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action> -->
+		
+		<!-- <action name="admin" class="net.rk.struts2.action.AdminAction">
+			<result name="addUser">stockfrontpages/stocks.jsp</result>
+			<result name="deleteUser">stockfrontpages/deleteUser.jsp</result>
+			<result name="modifyUser">stockfrontpages/modifyUser.jsp</result>
+			<result name="addCompany">stockfrontpages/addCompany.jsp</result>
+			<result name="deleteCompany">stockfrontpages/deleteCompany.jsp</result>
+			<result name="modifyCompany">stockfrontpages/modifyCompany.jsp</result>
+			<result name="error">/error.jsp</result> -->
+			
+		<!-- </action> -->
+		
+	  	<action name="test" class="net.rk.struts2.action.AdminAction">
+		<result name="test">/error.jsp</result>
+		</action>
+		
+		<action name="buystocks" class="net.rk.struts2.action.BuyStocks">
+		<result name="buy">/Client_MakeTransactions.jsp</result>
+		</action>
+		
+		<action name="mystocks" class="net.rk.struts2.action.MyStocks">
+		<result name="myst">/ClientHome.jsp</result>
+		</action>
+		<action name="sellstocks" class="net.rk.struts2.action.SellStocks">
+		<result name="sell">/ClientHome.jsp</result>
+		</action>
+		
+		<action name="search1" class="net.rk.struts2.action.SearchStocksAction" method="execute">
+		<result name="search">/Client_MakeTransactions.jsp</result>
+		<result name="error">/error.jsp</result>
+		</action>
+		<action name="marketplace" class="net.rk.struts2.action.MarketPlace" method="execute">
+		<result name="test">/MarketPlace.jsp</result>
+		</action>
+		
+		<action name="myclients" class="net.rk.struts2.action.BrokerMyClients">
+		<result name="mycl">/BrokerMyClients.jsp</result>
+		</action>
+		
+		<action name="brokerchangetoclient" class="net.rk.struts2.action.BrokerChangeToClient">
+		<result name="brct">/BrokerMyClients.jsp</result>
+		</action>
+
+
+	</package>
+ 
+</struts>

@@ -1,0 +1,50 @@
+body 
+{
+background-image:url('img8.jpg');
+background-color:#cccccc;
+}
+
+.header {
+	font-family: cursive;
+	background-color: #34A0A2;
+	width: 100%;
+	text-align: center;
+	padding-top: 5px;
+	position: fixed;
+	top: 0px;
+	bottom: 95%;
+	font-size: 20px;
+	color: black;
+	
+}
+
+.footer {
+	font-family: cursive;
+	width: 100%;
+	background-color: #34A0A2;
+	clear: both;
+	text-align: center;
+	bottom: 0px;
+	position: fixed;
+	top: 97%;
+	left: 0px;
+	right: 0px;
+	color: black;
+}
+
+td {
+	margin: 50px auto;
+	width:350px;
+	padding:10px;
+	}
+
+.content {
+	font-family: serif;
+	color : black;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding-top:156px;
+	
+	
+}
